@@ -48,9 +48,6 @@ clean:
 %.o: %.S
 	$(AS) -o $@ -c $< $(GFLAGS) $(ASFLAGS)
 
-dirs:
-	mkdir -p bin
-
 bootsect: $(BOOTSECT_OBJS)
 	$(LD) -o ./bin/$(BOOTSECT) $^ -Ttext 0x7C00 --oformat=binary
 
